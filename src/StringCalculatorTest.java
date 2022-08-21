@@ -71,4 +71,14 @@ public class StringCalculatorTest {
         Exception e=assertThrows(Exception.class, ()->StringCalculator.add("-1,-6,4,-8"));
         assertEquals("Negative not allowed -1,-6,-8,",e.getMessage());
     }
+
+    @Test
+    public void hasMoreThanThosandValue()
+    {   
+        String inputValue = "2000,2,1001";
+        int expectedValue = 2;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should ignore the value which grater then 1000",expectedValue,actualValue);
+    }
+
 }

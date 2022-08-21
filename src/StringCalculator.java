@@ -26,7 +26,10 @@ public class StringCalculator {
             }
             else
             {
-                sum+=Integer.parseInt(str);
+                if(!(Integer.parseInt(str) > 1000))
+                {
+                    sum+=Integer.parseInt(str);
+                }
             }   
         }
         if(tmp.length()!=0)
