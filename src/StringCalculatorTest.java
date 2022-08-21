@@ -19,4 +19,13 @@ public class StringCalculatorTest {
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it shoud return 1 if one argument is passed",expectedValue, actualValue);
     }
+
+    @Test
+    public void hasTwoValues()
+    {
+        String inputValue = "1,30";
+        int expectedValue = 31;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should return sum of both value seprated by , ",expectedValue, actualValue);
+    }
 }
