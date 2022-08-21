@@ -19,6 +19,10 @@ public class StringCalculator {
                 int no=ch;
                 sum+=(no-96);
             }
+            else if(Integer.parseInt(str) < 0)
+            {
+                throw new RuntimeException("Negative not allowed "); 
+            }
             else
             {
                 sum+=Integer.parseInt(str);

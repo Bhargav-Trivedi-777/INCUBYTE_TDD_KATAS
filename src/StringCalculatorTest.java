@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 public class StringCalculatorTest {
@@ -39,14 +40,14 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void hasAlphabateValue()
+        public void hasAlphabateValue()
     {
         String inputValue = "z";
         int expectedValue = 26;
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it should return 1 if a given and 2 if b and so on",expectedValue, actualValue);
     }
-    
+
     @Test
     public void hasAlphaNumericValue()
     {
@@ -54,5 +55,22 @@ public class StringCalculatorTest {
         int expectedValue = 12;
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it should return sum of all the int and alphabets according to Ascci",expectedValue, actualValue);
+    }
+
+    @Test
+    public void shouldRaiseExceptionOnNegetiveValue()
+    {
+        String inputValue = "-1,-8,-7";
+        try
+        {
+            StringCalculator.add(inputValue);
+            
+        }
+        catch(RuntimeException ex)
+        {
+            System.out.println(ex.getMessage());
+            assertEquals("Negative not allowed -1,-6,-7", ex.getMessage());
+            fail("Exception");
+        }
     }
 }
