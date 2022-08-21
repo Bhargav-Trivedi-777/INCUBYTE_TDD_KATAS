@@ -9,6 +9,7 @@ public class StringCalculator {
         }         
         StringTokenizer st1 = new StringTokenizer(inputValue,",");
         int sum=0;
+        String tmp = "";
         while(st1.hasMoreTokens())
         {
             String str=st1.nextToken();
@@ -21,13 +22,17 @@ public class StringCalculator {
             }
             else if(Integer.parseInt(str) < 0)
             {
-               throw new RuntimeException("Negative not allowed"); 
+                tmp += str+",";
             }
             else
             {
                 sum+=Integer.parseInt(str);
-            }
+            }   
         }
-        return sum;
+        if(tmp.length()!=0)
+        {
+            throw new RuntimeException("Negative not allowed "+tmp); 
+        }
+         return sum;
     }
 }
