@@ -28,4 +28,13 @@ public class StringCalculatorTest {
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it should return sum of both value seprated by , ",expectedValue, actualValue);
     }
+
+    @Test
+    public void hasTwoOrMoreValues()
+    {
+        String inputValue = "11,3,5,10";
+        int expectedValue = 29;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should return sum of all given numbers",expectedValue, actualValue);
+    }
 }
