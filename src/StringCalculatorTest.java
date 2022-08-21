@@ -37,4 +37,13 @@ public class StringCalculatorTest {
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it should return sum of all given numbers",expectedValue, actualValue);
     }
+
+    @Test
+    public void hasAlphabateValue()
+    {
+        String inputValue = "z";
+        int expectedValue = 26;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should return 1 if a given and 2 if b and so on",expectedValue, actualValue);
+    }
 }
