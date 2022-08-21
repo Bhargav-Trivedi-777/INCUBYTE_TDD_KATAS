@@ -7,7 +7,7 @@ public class StringCalculator {
         {
             return 0;
         }         
-        StringTokenizer st1 = new StringTokenizer(inputValue,",");
+        StringTokenizer st1 = new StringTokenizer(inputValue,",\n");
         int sum=0;
         String tmp = "";
         while(st1.hasMoreTokens())

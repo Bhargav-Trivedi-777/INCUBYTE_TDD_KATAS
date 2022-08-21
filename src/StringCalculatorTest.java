@@ -81,4 +81,12 @@ public class StringCalculatorTest {
         assertEquals("it should ignore the value which grater then 1000",expectedValue,actualValue);
     }
 
+    @Test
+    public void shouldAllowNewLine()
+    {
+        String inputValue = "1,2,a,3\n4";
+        int expectedValue = 11;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should all the new line character and return the sum of all",expectedValue, actualValue);
+    }
 }
