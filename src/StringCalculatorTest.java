@@ -46,4 +46,13 @@ public class StringCalculatorTest {
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it should return 1 if a given and 2 if b and so on",expectedValue, actualValue);
     }
+    
+    @Test
+    public void hasAlphaNumericValue()
+    {
+        String inputValue = "1,2,a,3,c,b";
+        int expectedValue = 12;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should return sum of all the int and alphabets according to Ascci",expectedValue, actualValue);
+    }
 }
