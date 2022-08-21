@@ -97,4 +97,14 @@ public class StringCalculatorTest {
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it should all the new line character and return the sum of all",expectedValue, actualValue);
     }
+
+    @Test
+    public void shouldAllowOddAddtion()
+    {
+        String inputValue= "0//***\n1***2***3";
+        int expectedValue = 2;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should return sum of all odd values",expectedValue, actualValue);
+    }
+
 }
