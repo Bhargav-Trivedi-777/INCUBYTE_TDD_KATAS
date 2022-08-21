@@ -89,4 +89,12 @@ public class StringCalculatorTest {
         int actualValue = StringCalculator.add(inputValue);
         assertEquals("it should all the new line character and return the sum of all",expectedValue, actualValue);
     }
+     @Test
+    public void shouldAllowDelimiter()
+    {
+        String inputValue = "//;\n1;2";
+        int expectedValue = 3;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should all the new line character and return the sum of all",expectedValue, actualValue);
+    }
 }
