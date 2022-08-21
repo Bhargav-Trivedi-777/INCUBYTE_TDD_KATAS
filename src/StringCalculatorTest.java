@@ -107,4 +107,15 @@ public class StringCalculatorTest {
         assertEquals("it should return sum of all odd values",expectedValue, actualValue);
     }
 
+    @Test
+    public void shouldAllowEvenAddtion()
+    {
+        String inputValue= "1//***\n1***2***3";
+        int expectedValue = 4;
+        int actualValue = StringCalculator.add(inputValue);
+        assertEquals("it should return sum of all odd values",expectedValue, actualValue);
+    }
+
+    
+
 }
