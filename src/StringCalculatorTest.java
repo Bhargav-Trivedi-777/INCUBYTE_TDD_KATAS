@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -60,17 +61,7 @@ public class StringCalculatorTest {
     @Test
     public void shouldRaiseExceptionOnNegetiveValue()
     {
-        String inputValue = "-1,-8,-7";
-        try
-        {
-            StringCalculator.add(inputValue);
-            
-        }
-        catch(RuntimeException ex)
-        {
-            System.out.println(ex.getMessage());
-            assertEquals("Negative not allowed -1,-6,-7", ex.getMessage());
-            fail("Exception");
-        }
+        Exception e=assertThrows(Exception.class, ()->StringCalculator.add("-1"));
+        assertEquals("Negative not allowed",e.getMessage());
     }
 }

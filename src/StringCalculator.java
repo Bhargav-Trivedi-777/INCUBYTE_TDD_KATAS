@@ -14,14 +14,14 @@ public class StringCalculator {
             String str=st1.nextToken();
             char ch=str.charAt(0);
 
-            if(!Character.isDigit(ch))
+            if((!Character.isDigit(ch))&&(str.length()==1))
             {
                 int no=ch;
                 sum+=(no-96);
             }
             else if(Integer.parseInt(str) < 0)
             {
-                throw new RuntimeException("Negative not allowed "); 
+               throw new RuntimeException("Negative not allowed"); 
             }
             else
             {
